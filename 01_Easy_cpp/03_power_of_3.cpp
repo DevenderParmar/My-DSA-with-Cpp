@@ -1,0 +1,51 @@
+// #include <iostream>
+// using namespace std;
+// bool powerofthree(int n)
+// {
+//     if(n<= 0) return false;
+
+//     while(n%3 == 0)
+//     {
+//         n /=3;
+//     }
+//     return n==1;
+// }
+// int main()
+// {
+//     int n;
+//     cout << "enter a number = ";
+//     cin >> n;
+
+//     if (powerofthree(n))
+//     {
+//         cout << n << " is power of 3";
+//     }
+//     else
+//         cout << n << " NOT  a power of 3";
+
+//     return 0;
+// }
+
+// FOR 100% beats
+
+#include <iostream>
+using namespace std;
+int powerofthree(int n)
+{
+    return ((n > 0) && ((1162261467 % n) == 0));
+}
+int main()
+{
+    int n;
+    cout << "enter a number = ";
+    cin >> n;
+
+    if (powerofthree(n))
+    {
+        cout << n << " is power of 3";
+    }
+    else
+        cout << n << " NOT  a power of 3";
+
+    return 0;
+}
