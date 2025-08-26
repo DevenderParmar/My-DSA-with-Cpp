@@ -26,6 +26,7 @@ void sort_colors(vector<int>& nums)
         }
     }
 }
+// There are also some other methods but this is most optimal for both time and space complexity.time = O(n),space = 0(1);
 int main()
 {
     vector<int> nums  = {0,2,1,1,2,0,2,1,0,1};
