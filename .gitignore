@@ -1,0 +1,16 @@
+# Ignore compiled files
+*.exe
+*.out
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+
+# Ignore debug and release folders
+/debug/
+ /release/
+ /build/
+
+# Ignore VS Code settings (optional, if you don't want to share them)
+.vscode/
