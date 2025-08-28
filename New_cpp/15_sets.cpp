@@ -11,7 +11,7 @@ int main()
     s.insert(3);
     s.insert(4);
     s.insert(1);
-    s.insert(5);
+    s.insert(5);// also it give print the values in ascending order dosent matter how to insert them 
     s.insert(2);
     s.insert(5);
 
@@ -24,5 +24,8 @@ int main()
     {
         cout<< value << " ";
     }
+
+    //MULTI SET = SILIMAR TO MAP IF YOU DONT WANT TO IGNORE DUPLICATES
+    // UNORDERED SET = SIMILAR IF YOU WANT TO PRINT IN RANDOM ORDER.ALSO WE DONT HAVE LOWERBOUND AND UPPERBOUND IN THESE.
  return 0;
 }
