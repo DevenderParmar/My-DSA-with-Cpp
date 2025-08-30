@@ -22,8 +22,8 @@ int main()
 
     reverse(str.begin(),str.end());
 
-    cout<< "reversed string = "<< str<< endl;
+    cout<< "reversed string = "<< str<< endl;// it reverse 
 
-    cout<< "reversed string using own function = "<< reverse_string(str)<<endl;
+    cout<< " again reversed string using own function = "<< reverse_string(str) <<endl;// reverse again to turn into original;
  return 0;
 }
