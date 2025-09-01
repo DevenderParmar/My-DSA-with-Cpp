@@ -2,21 +2,27 @@
 #include<string>
 using namespace std;
 
-string remove_all_occurance_by_substrings(string s,string part)
+string remove_all_occurrence_by_substrings(string s, string part)
 {
-    while(s.find(part) >0 && s.find(part)<s.length())//this condition also works(s.find(part) != string::npos)
+    while (s.find(part) != string::npos) // keep removing until substring not found
     {
-        s.erase(s.find(part),part.length());
-        
+        s.erase(s.find(part), part.length());
     }
     return s;
 }
+
 int main()
 {
-    int fre[26] = {0}   ;
-    for(int i = 0;i<26;i++)
-    {
-        cout<<fre[i];
-    }
- return 0;
+    string str, sub;
+    cout << "Enter the main string: ";
+    getline(cin, str);
+
+    cout << "Enter the substring to remove: ";
+    cin >> sub;
+
+    string result = remove_all_occurrence_by_substrings(str, sub);
+
+    cout << "String after removing all occurrences: " << result << endl;
+
+    return 0;
 }
