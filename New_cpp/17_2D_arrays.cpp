@@ -62,6 +62,7 @@ int main()
                 break;
             }
         }
+        if(found) break;
     }
     if(found)
     {
