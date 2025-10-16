@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 void printnum(int n)
 {
@@ -10,12 +11,14 @@ void printnum(int n)
     cout << n << " ";
     printnum(n - 1);
 }
+
 int fact(int n)
 {
     if (n == 0)
         return 1;
     return fact(n - 1) * n;
 }
+
 int sum(int n)
 {
     if (n == 1)
@@ -33,6 +36,7 @@ bool issorted(int arr[], int n)
     }
     return arr[n - 1] >= arr[n - 2] && issorted(arr, n - 1);
 }
+
 int recursive_binary(int arr[], int target, int start, int end)
 {
     if (start <= end)
@@ -53,6 +57,24 @@ int recursive_binary(int arr[], int target, int start, int end)
     }
     return -1;
 }
+
+void subset(vector<int> &arr, vector<int> &ans, int i)
+{
+    if (i == arr.size())
+    {
+        for (int val : ans)
+        {
+            cout << val << " ";
+        }
+        cout << endl;
+        return;
+    }
+    ans.push_back(arr[i]);
+    subset(arr,ans,i+1);
+    ans.pop_back();
+    subset(arr,ans,i+1);
+    
+}
 int main()
 {
     // int n = 10;
@@ -66,10 +88,10 @@ int main()
 
     int start = 0, end = 5 - 1;
     cout << endl;
-    int ans = recursive_binary(arr,target,start,end);
+    int ans = recursive_binary(arr, target, start, end);
     if (recursive_binary(arr, target, start, end) != -1)
     {
-        printf(" The element is found at index = ",ans);
+        printf(" The element is found at index = ", ans);
     }
 
     return 0;
