@@ -1,49 +1,68 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
-int single_element(vector<int>& nums)
+int single_element(vector<int> &nums)
 {
     int n = nums.size();
-    int start = 0,end = n-1;
-    while(start<= end)
+    int start = 0, end = n - 1;
+    // while(start<= end)
+    // {
+    //     int mid = start +(end-start)/2;
+    //     if(mid == 0 && nums[mid] != nums[mid+1])return nums[mid];
+    //     if(mid == n-1 && nums[mid] != nums[mid-1])return nums[mid];
+    //     if(nums[mid] != nums[mid-1] && nums[mid]!= nums[mid+1])
+    //     {
+    //         return nums[mid];
+    //     }
+    //     if(mid %2 ==0 )
+    //     {
+    //         if(nums[mid] == nums[mid-1])
+    //         {
+    //             end = mid-1;
+    //         }
+    //         else
+    //         {
+    //             start = mid+1;
+    //         }
+
+    //     }
+    //     else
+    //     {
+    //         if(nums[mid] == nums[mid-1])
+    //         {
+    //             start = mid+1;
+
+    //         }
+    //         else
+    //         {
+    //             end = mid-1;
+    //         }
+
+    //     }
+    // }
+    while (start <= end)
     {
-        int mid = start +(end-start)/2;
-        if(mid == 0 && nums[mid] != nums[mid+1])return nums[mid];
-        if(mid == n-1 && nums[mid] != nums[mid-1])return nums[mid];
-        if(nums[mid] != nums[mid-1] && nums[mid]!= nums[mid+1])
+        int mid = start + (end - start) / 2;
+        if (mid % 2 == 1)
+            mid--;
+        if (nums[mid] != nums[mid + 1] && nums[mid] != nums[mid - 1])
+            return mid;
+        if (nums[mid] == nums[mid + 1])
         {
-            return nums[mid];
+            start = mid + 1;
         }
-        if(mid %2 ==0 )
+        else if (nums[mid] != nums[mid + 1])
         {
-            if(nums[mid] == nums[mid-1])
-            {
-                end = mid-1;
-            }
-            else
-            {
-                start = mid+1;
-            }
-
-        }
-        else
-        {
-            if(nums[mid] == nums[mid-1])
-            {
-                start = mid+1;
-
-            }
-            else
-            {
-                end = mid-1;
-            }
-
-
+            end = mid - 1;
         }
     }
     return -1;
 }
+// Before the single element →
+// pairs start at even indices
+// After the single element →
+// pairs start at odd indices
 int main()
 {
- return 0;
+    return 0;
 }
