@@ -6,18 +6,19 @@ bool isvalid(vector<int> &pages, int mid, int m)
     int stud = 1, allot = 0;
     for (int i = 0; i < pages.size(); i++)
     {
-        if(pages[i] >mid) return false;
+        if (pages[i] > mid)
+            return false;
         if (allot + pages[i] <= mid)
         {
             allot += pages[i];
         }
-        else  
+        else
         {
             stud++;
             allot = pages[i];
         }
     }
-    return stud<=m;
+    return stud <= m;
 }
 int book_allocation(vector<int> &pages, int m)
 {
@@ -46,5 +47,6 @@ int book_allocation(vector<int> &pages, int m)
 }
 int main()
 {
+
     return 0;
 }
